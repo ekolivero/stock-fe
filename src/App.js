@@ -1,9 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
+import { useEffect } from "react"
+import { getTicker } from "./api/stocks"
+import { Header } from "@components"
 
 function App() {
+
+  useEffect(() => {
+    getTicker()
+  })
+
   return (
     <div className="App">
+      <Header />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>

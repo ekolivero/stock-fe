@@ -1,0 +1,35 @@
+.container__header {
+  background-color: $header-bg;
+  box-sizing: border-box;
+  height: 91px;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+
+  &--title {
+    //TODO: Add correct styling for text @include text--title
+    h1 {
+      color: $text-app;
+      font-size: calc(18px + 1vmin);
+    }
+  }
+
+  &--build {
+    display: none;
+  }
+
+
+  @include media-breakpoint-up(sm) {
+    justify-content: space-between;
+    padding: 0 2em; 
+    &--build {
+      display: flex;
+      color: $text-gray;
+
+      h3 {
+        font-size: calc(12px + 1vmin);
+      }
+    }
+  }
+}
