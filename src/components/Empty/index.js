@@ -1,8 +1,8 @@
-const Empty = () => (
-  <div className="contianer__empty">
-    <div className="container__empty--img">
+import EmptyImage from "@assets/financial.png"
 
-    </div>
+const Empty = () => (
+  <div className="container__empty">
+    <img src={EmptyImage} className="container__empty--img"/>
     <div className="container__empty--rfa">
       Select some stocks on the left side for see details ...
     </div>

@@ -3,6 +3,10 @@ import tickers from "./tickers/tickers.json";
 
 const basePath = "https://api.polygon.io";
 
+const getRandomNumber = (min, max, fixed = 2) => {
+  return (Math.random() * (max - min) + min).toFixed(fixed)
+}
+
 export const handlers = [
   //This is a sample for handling mocked pagination with version v2
   rest.get(`${basePath}/v2/reference/tickers`, (req, res, ctx) => {
@@ -19,8 +23,6 @@ export const handlers = [
       isFirstPage ? 0 : page * per_page,
       isFirstPage ? per_page : page * per_page
     );
-
-    console.log(data);
 
     return res(
       ctx.status(200),
@@ -68,4 +70,24 @@ export const handlers = [
       })
     );
   }),
+
+  rest.get(`${basePath}/v1/open-close/:ticker/:date`, (req, res, ctx) => {
+    const { ticker } = req.params
+    const { date } = req.params
+
+    return res(
+      ctx.json({
+        afterHours: getRandomNumber(100, 200),
+        close: getRandomNumber(100, 200),
+        from: date,
+        height: getRandomNumber(100, 200),
+        low: getRandomNumber(100, 150),
+        open: getRandomNumber(100, 200),
+        preMarket: getRandomNumber(100, 200),
+        status: "OK", 
+        symbol: ticker,
+        volume: getRandomNumber(40000, 900000, 0),
+      })
+    )
+  })
 ];

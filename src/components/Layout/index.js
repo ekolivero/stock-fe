@@ -1,4 +1,5 @@
 import { Empty } from "@components"
+import { Route } from "react-router-dom"
 
 const Layout = (props) => {
   const {
@@ -8,7 +9,6 @@ const Layout = (props) => {
     ...rest
   } = props
 
-  console.log(Detail)
 
   return (
     <div className="container" id={id}>
@@ -16,7 +16,12 @@ const Layout = (props) => {
         <Master />
       </div>
       <div className="container__ticker-detail">
-        <Detail />
+        <Route path="/:ticker">
+          <Detail />
+        </Route>
+        <Route exact path="/">
+          <Empty />
+        </Route>
       </div>
     </div>
   )

@@ -9,6 +9,7 @@ module.exports = {
       "@pages": path.resolve(__dirname, "src/pages"),
       "@mocks": path.resolve(__dirname, "src/mooks"),
       "@state": path.resolve(__dirname, "src/state"),
+      "@assets": path.resolve(__dirname, "src/assets"),
     }
   }
 }
