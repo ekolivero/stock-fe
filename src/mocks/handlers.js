@@ -50,7 +50,7 @@ export const handlers = [
       return res(
         ctx.status(200),
         ctx.json({
-          ...filteredTickers,
+          results: Array(...filteredTickers),
           status: "OK",
           request_id: "5006ee93404846e2838f8781797e2ad6",
           count: filteredTickers.length,

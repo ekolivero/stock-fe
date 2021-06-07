@@ -1,0 +1,81 @@
+.container__ticker {
+  display: flex;
+  flex: 1;
+  flex-flow: row;
+  border-top: 1px solid black;
+  min-height: 100px;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  padding: 10px 0;
+  text-decoration: none;
+
+  &--selected {
+    background-color: $bg-color;
+  }
+
+  &:nth-last-child(1) {
+    border-bottom: 1px solid black;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 20px;
+  }
+
+  &__info {
+    display: flex;
+    flex: 2;
+    flex-flow: column;
+
+    &--ticker {
+      color: $text-gray;
+    }
+
+    &--name {
+      color: $text-gray;
+      font-size: 16px;
+    }
+  }
+
+  &__exchange {
+    display: flex;
+    flex: 1;
+    flex-flow: column;
+
+    &--exchange {
+      color: white;
+      font-weight: 800;
+      font-size: 15px;
+    }
+
+    &--market {
+      font-size: 14px;
+      color: $text-gray
+    }
+
+  }
+
+  &__data {
+    display: none;
+    flex: 2;
+    flex-flow: column;
+    @include media-breakpoint-up(md) {
+      display: flex;
+    }
+
+    &--time {
+      font-size: 15px;
+      color: $text-gray
+    }
+
+    &--utc {
+      font-size: 13px;
+      color: $text-gray;
+    }
+  }
+
+  &:hover {
+    background-color: $bg-color;
+    cursor: pointer;
+  }
+}

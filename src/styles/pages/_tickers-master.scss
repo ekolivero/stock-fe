@@ -1,0 +1,38 @@
+.container__master {
+  display: flex;
+  flex: 1; 
+  flex-flow: column;
+
+  &__input {
+    box-sizing: border-box;
+    margin: 2em 2em;
+
+    &--input {
+      display: flex;
+      width: 100%;
+      height: 40px;
+      background-color: #fff;
+      opacity: .6;
+      border-radius: 10px;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      font-size: calc(1px + 2vmin);
+      color: $text-gray;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  &__scroller {
+    max-height: 100%;
+    overflow-y: scroll;
+  }
+
+  &__empty {
+    color: $text-gray;
+    font-size: calc(2px + 2vmin);
+  }
+}
