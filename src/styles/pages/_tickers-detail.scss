@@ -4,6 +4,7 @@
   flex-flow: column;
   max-width: 90%;
   margin: 1em auto;
+  max-height: 100%;
 
   &__title {
     box-sizing: border-box;
@@ -27,10 +28,23 @@
 
   &__history {
     color: white;
-    margin-top: 2em;
+    margin-top: 1em;
     display: flex;
-    flex: 1;
     flex-flow: column;
+
+    &__row {
+      display: flex;
+      flex: 1 1 120px;
+      flex-flow: row;
+      flex-wrap: wrap;
+
+      @include media-breakpoint-up(lg) {
+        display: flex;
+        flex: 1;
+        flex-flow: column;
+      }
+
+    }
 
     &--date {
       text-align: left;
@@ -39,21 +53,36 @@
 
     &__summary {
       display: flex;
-      flex: 1;
       margin-top: 1em;
+      flex-flow: row;
+      margin: 1em 20px;
+
+      @include media-breakpoint-up(lg) {
+        margin: 1em 2em;
+      }
+      
 
       &--label {
         display: flex;
         flex: 1;
-        font-size: calc(12px + 1vmin);
+        font-size: calc(8px + 1vmin);
         color: $text-gray;
+        margin-right: 15px;
+
+        @include media-breakpoint-up(lg) {
+          font-size: calc(12px + 1vmin)
+        }
       }
 
       &--value {
         display: flex;
         flex: 1;
         justify-content: flex-end;
-        font-size: calc(12px + 1vmin);
+        font-size: calc(8px + 1vmin);
+
+        @include media-breakpoint-up(lg) {
+          font-size: calc(12px + 1vmin)
+        }
       }
 
     }

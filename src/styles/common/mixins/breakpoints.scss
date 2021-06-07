@@ -1,7 +1,7 @@
 $grid-breakpoints: (
   sm: 580px,
-  md: 800px,
-  lg: 1300px,
+  md: 870px,
+  lg: 1600px,
 ) !default;
 
 @function breakpoint-min($name, $breakpoints: $grid-breakpoints) {

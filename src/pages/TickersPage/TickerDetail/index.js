@@ -46,52 +46,54 @@ const TickerDetail = () => {
             <div className="ticker__container__history--date">
               {moment(date).format("MMM Do YY")}:
             </div>
-            <div className="ticker__container__history__summary">
-              <div className="ticker__container__history__summary--label">
-                Prev Close
+            <div className="ticker__container__history__row">
+              <div className="ticker__container__history__summary">
+                <div className="ticker__container__history__summary--label">
+                  Prev Close
+                </div>
+                <div className="ticker__container__history__summary--value">
+                  {preMarket}
+                </div>
               </div>
-              <div className="ticker__container__history__summary--value">
-                {preMarket}
+              <div className="ticker__container__history__summary">
+                <div className="ticker__container__history__summary--label">
+                  Open
+                </div>
+                <div className="ticker__container__history__summary--value">
+                  {open}
+                </div>
               </div>
-            </div>
-            <div className="ticker__container__history__summary">
-              <div className="ticker__container__history__summary--label">
-                Open
+              <div className="ticker__container__history__summary">
+                <div className="ticker__container__history__summary--label">
+                  Close
+                </div>
+                <div className="ticker__container__history__summary--value">
+                  {close}
+                </div>
               </div>
-              <div className="ticker__container__history__summary--value">
-                {open}
+              <div className="ticker__container__history__summary">
+                <div className="ticker__container__history__summary--label">
+                  Low
+                </div>
+                <div className="ticker__container__history__summary--value">
+                  {low}
+                </div>
               </div>
-            </div>
-            <div className="ticker__container__history__summary">
-              <div className="ticker__container__history__summary--label">
-                Close
+              <div className="ticker__container__history__summary">
+                <div className="ticker__container__history__summary--label">
+                  Height
+                </div>
+                <div className="ticker__container__history__summary--value">
+                  {high}
+                </div>
               </div>
-              <div className="ticker__container__history__summary--value">
-                {close}
-              </div>
-            </div>
-            <div className="ticker__container__history__summary">
-              <div className="ticker__container__history__summary--label">
-                Low
-              </div>
-              <div className="ticker__container__history__summary--value">
-                {low}
-              </div>
-            </div>
-            <div className="ticker__container__history__summary">
-              <div className="ticker__container__history__summary--label">
-                Height
-              </div>
-              <div className="ticker__container__history__summary--value">
-                {high}
-              </div>
-            </div>
-            <div className="ticker__container__history__summary">
-              <div className="ticker__container__history__summary--label">
-                Volume
-              </div>
-              <div className="ticker__container__history__summary--value">
-                {volume}
+              <div className="ticker__container__history__summary">
+                <div className="ticker__container__history__summary--label">
+                  Volume
+                </div>
+                <div className="ticker__container__history__summary--value">
+                  {volume}
+                </div>
               </div>
             </div>
           </div>
