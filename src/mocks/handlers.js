@@ -52,11 +52,11 @@ export const handlers = [
       return res(
         ctx.status(200),
         ctx.json({
-          results: Array(...filteredTickers),
+          results: filteredTickers.length > 0 ? Array(...filteredTickers) : null,
           status: "OK",
           request_id: "5006ee93404846e2838f8781797e2ad6",
           count: filteredTickers.length,
-          next_url: "https://api.polygon.io:443/v3/reference/tickers?cursor=2",
+          next_url: filteredTickers.length > 0 ? "https://api.polygon.io:443/v3/reference/tickers?cursor=2" : null,
         })
       );
     }
@@ -80,7 +80,7 @@ export const handlers = [
         afterHours: getRandomNumber(100, 200),
         close: getRandomNumber(100, 200),
         from: date,
-        height: getRandomNumber(100, 200),
+        high: getRandomNumber(100, 200),
         low: getRandomNumber(100, 150),
         open: getRandomNumber(100, 200),
         preMarket: getRandomNumber(100, 200),

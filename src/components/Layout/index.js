@@ -6,7 +6,6 @@ const Layout = (props) => {
     master: Master,
     detail: Detail,
     id,
-    ...rest
   } = props
 
 

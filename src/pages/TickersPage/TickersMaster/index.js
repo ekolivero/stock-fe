@@ -10,7 +10,6 @@ const TickersMaster = () => {
       tickers: {
         next_url,
         tickers,
-        isLoading
       }
     },
     actions

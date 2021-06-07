@@ -3,7 +3,8 @@ import { getOpenClose } from "./actions"
 
 const initialState = {
   isLoading: false,
-  data: []
+  data: [],
+  error: false,
 }
 
 const tickerReducer = createSlice({
@@ -17,6 +18,9 @@ const tickerReducer = createSlice({
     [getOpenClose.fulfilled]: (state, { payload }) => {
       state.isLoading = true
       state.data = payload
+    },
+    [getOpenClose.rejected]: (state, { payload }) => {
+      state.error = payload.error
     }
   }
 })
