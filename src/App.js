@@ -5,7 +5,7 @@ import { useAppState } from "@hooks"
 import { getTickers } from "@state/tickers/actions"
 import { Header } from "@components"
 import TickersPage from "@pages/TickersPage"
-import { Redirect } from "react-router-dom"
+import { useHistory } from "react-router-dom"
 
 function App() {
 
@@ -18,8 +18,10 @@ function App() {
     actions
   ] = useAppState(state => state, { getTickers })
 
-  useEffect(() => {
+  const history = useHistory()
 
+  useEffect(() => {
+    history.replace("/")
     const fetchInitialTickers = () => {
       actions.getTickers()
     }
@@ -30,7 +32,6 @@ function App() {
 
   return (
     <div className="App">
-      <Redirect to="/" />
       <Header />
       <TickersPage />
     </div>

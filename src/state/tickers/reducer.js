@@ -5,6 +5,7 @@ const initialState = {
   isLoading: false,
   next_url: undefined,
   tickers: [],
+  loaded: false,
 }
 
 const tickersReducer = createSlice({
@@ -14,11 +15,13 @@ const tickersReducer = createSlice({
   extraReducers: {
     [getTickers.pending]: (state) => {
       state.isLoading = true
+      state.loaded = false
     },
     [getTickers.fulfilled]: (state, {payload}) => {
       state.isLoading = false
       state.tickers = payload.results
       state.next_url = payload.next_url
+      state.loaded = true
     },
     [getNextTickers.pending]: (state) => {
       state.isLoading = true
