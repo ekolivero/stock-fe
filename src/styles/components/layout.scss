@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  flex-flow: column;
+  flex: 1;
+  height: calc(100vh - 91px);
+
+  @include media-breakpoint-up(sm) {
+    flex-flow: row;
+  }
+
+  &__tickers-list {
+    @include media-breakpoint-up(sm) {
+    display: flex;
+    flex: 1;
+    height: 100%;
+    background-color: $bg-aside;
+    }
+  }
+
+  &__ticker-detail {
+
+    background-color: $bg-color;
+
+    @include media-breakpoint-up(sm) {
+      display: flex;
+      flex: 2;
+      height: 100%;
+    }
+  }
+}

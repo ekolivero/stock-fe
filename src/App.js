@@ -1,32 +1,38 @@
 import logo from './logo.svg';
 import './App.css';
 import { useEffect } from "react"
-import { getTicker } from "./api/stocks"
+import { useAppState } from "@hooks"
+import { getTickers } from "@state/tickers/actions"
 import { Header } from "@components"
+import TickersPage from "@pages/TickersPage"
+import { Redirect } from "react-router-dom"
 
 function App() {
 
+  const [
+    {
+      tickers: {
+        isLoading
+      }
+    },
+    actions
+  ] = useAppState(state => state, { getTickers })
+
   useEffect(() => {
-    getTicker()
-  })
+
+    const fetchInitialTickers = () => {
+      actions.getTickers()
+    }
+
+    fetchInitialTickers()
+
+  }, [])
 
   return (
     <div className="App">
+      <Redirect to="/" />
       <Header />
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <TickersPage />
     </div>
   );
 }
