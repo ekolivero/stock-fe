@@ -18,6 +18,13 @@
     border-bottom: 1px solid $text-gray;
   }
 
+  &__error {
+    display: none;
+    color: $text-white;
+    margin-top: 2em;
+    font-size: calc(10px + 2vmin)
+  }
+
   &__history {
     color: white;
     margin-top: 2em;
