@@ -62,7 +62,9 @@
     "start-server-and-test": "^1.12.5"
   },
   "lint-staged": {
-    "*.{js,css,md}": "prettier --write"
+    "src/**/*.{js, jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --write"
+    ]
   },
   "msw": {
     "workerDirectory": "public"
