@@ -1,5 +1,8 @@
 {
   "name": "stock-fe",
+  "jest": {
+    "preset": "jest-puppeteer"
+  },
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -24,8 +27,9 @@
   "scripts": {
     "start": "env-cmd craco start",
     "build": "craco build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "jest",
+    "eject": "react-scripts eject",
+    "test:e2e": "start-server-and-test start http://localhost:3000 test"
   },
   "eslintConfig": {
     "extends": [
@@ -48,8 +52,11 @@
   "devDependencies": {
     "env-cmd": "^10.1.0",
     "husky": "^6.0.0",
+    "jest-puppeteer": "^5.0.4",
     "msw": "^0.29.0",
-    "prettier": "^2.3.0"
+    "prettier": "^2.3.0",
+    "puppeteer": "^10.0.0",
+    "start-server-and-test": "^1.12.5"
   },
   "lint-staged": {
     "src/**/*.{js, jsx,ts,tsx,json,css,scss,md}": [

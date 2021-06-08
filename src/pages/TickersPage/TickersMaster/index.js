@@ -29,6 +29,7 @@ const TickersMaster = () => {
     <div className="container__master">
       <div className="container__master__input">
         <input 
+          name="tickers_search"
           className="container__master__input--input" 
           placeholder="Search for Tickers"
           onChange={handleChange}
