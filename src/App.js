@@ -2,7 +2,7 @@ import "./App.css";
 import { useEffect } from "react";
 import { useAppState, useWindowSize } from "@hooks";
 import { getTickers } from "@state/tickers/actions";
-import { Header } from "@components";
+import { Header, ErrorBoundary } from "@components";
 import TickersPage from "@pages/TickersPage";
 import { useHistory } from "react-router-dom";
 
@@ -30,7 +30,9 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <TickersPage />
+      <ErrorBoundary>
+        <TickersPage />
+      </ErrorBoundary>
     </div>
   );
 }

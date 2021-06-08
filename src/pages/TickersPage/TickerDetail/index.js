@@ -4,7 +4,7 @@ import { getOpenClose } from "@state/ticker/actions";
 import { useEffect } from "react";
 import moment from "moment";
 
-const TickerDetail = () => {
+const TickerDetail = ({ hasError }) => {
   const { ticker } = useParams();
   const [
     {
@@ -21,13 +21,21 @@ const TickerDetail = () => {
     // eslint-disable-next-line
   }, [ticker]);
 
+  if ( hasError && ticker === 'AA') {
+    //Fake ErrorBoundary
+    throw new Error("Error Boundary for ticker AA faked.")
+  }
+
   return (
     <div className="ticker__container">
       <div className="ticker__container__title">{ticker}</div>
       <div className="ticker__container__border" />
 
-      <div className="ticker__container__error" style={{ display: error && 'block'}}>
-        { error }
+      <div
+        className="ticker__container__error"
+        style={{ display: error && "block" }}
+      >
+        {error}
       </div>
 
       {data.map((history, index) => {
@@ -42,7 +50,11 @@ const TickerDetail = () => {
         } = history;
 
         return (
-          <div className="ticker__container__history" key={index} style={{ display: !!error && 'none'}}>
+          <div
+            className="ticker__container__history"
+            key={index}
+            style={{ display: !!error && "none" }}
+          >
             <div className="ticker__container__history--date">
               {moment(date).format("MMM Do YY")}:
             </div>

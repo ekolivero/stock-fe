@@ -1,0 +1,16 @@
+.container__error {
+  max-width: 80%;
+  margin: 2em auto;
+  font-size: calc(2px + 2vmin);
+  color: $text-white;
+
+  &__button {
+
+    &--btn {
+      width: 250px;
+      height: 60px;
+      border-radius: 20px;
+      margin-top: 2em;
+    }
+  }
+}
